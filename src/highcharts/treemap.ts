@@ -18,7 +18,7 @@ export class Treemap {
   CreateTreemapData(dataset: any, groupColumns: string[], targetValueColumn: string) {
 
     // call with (dataset, ['Chamber', "Tool"]j, 'ValueA')
-    const pointCollection: any[];
+    const pointCollection: any[] = [];
     let  GrandTotal: number = 0;
 
     GrandTotal += this.RecurseGroup(dataset.columns, dataset.data, groupColumns, 0, targetValueColumn, pointCollection, '');

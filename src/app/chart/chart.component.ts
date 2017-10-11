@@ -13,16 +13,23 @@ export class ChartComponent implements OnInit {
 
   }
   treemap = new Treemap({
-    chart: {
-      type: 'treemap'
-    },
+    // chart: {
+    //   type: 'treemap'
+    // },
     title: {
       text: 'Treemap'
     },
     credits: {
       enabled: false
     },
+    plotOptions:{
+      treemap:{
+        layoutAlgorithm: 'squarified',
+
+      }
+    },
     series: [{
+      
       data: [{
         name: 'A',
         value: 6
@@ -47,7 +54,7 @@ export class ChartComponent implements OnInit {
       }]
     }]
   });
-  
+
   ankur = new Treemap({
     chart: {
       type: 'treemap'
