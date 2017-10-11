@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Chart } from '../../highcharts/chart';
 import { Treemap } from '../../highcharts/treemap';
 @Component({
   selector: 'app-chart',
@@ -10,42 +9,83 @@ export class ChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(Chart);
     console.log(Treemap);
-    
+
   }
   treemap = new Treemap({
     chart: {
-      type: 'line'
+      type: 'treemap'
     },
     title: {
-      text: 'Linechart'
+      text: 'Treemap'
     },
     credits: {
       enabled: false
     },
     series: [{
-      name: 'Line 1',
-      data: [1, 2, 3]
-    }],
-
-  });
-  
-  chart = new Chart({
-    chart: {
-      type: 'line'
-    },
-    title: {
-      text: 'Linechart'
-    },
-    credits: {
-      enabled: false
-    },
-    series: [{
-      name: 'Line 1',
-      data: [1, 2, 3]
+      data: [{
+        name: 'A',
+        value: 6
+      }, {
+        name: 'B',
+        value: 6
+      }, {
+        name: 'C',
+        value: 4
+      }, {
+        name: 'D',
+        value: 3
+      }, {
+        name: 'E',
+        value: 2
+      }, {
+        name: 'F',
+        value: 2
+      }, {
+        name: 'G',
+        value: 1
+      }]
     }]
   });
+  
+  ankur = new Treemap({
+    chart: {
+      type: 'treemap'
+    },
+    title: {
+      text: 'Treemap'
+    },
+    credits: {
+      enabled: false
+    },
+    series: [{
+      data: [{
+        name: 'A',
+        value: 6
+      }, {
+        name: 'B',
+        value: 6
+      }, {
+        name: 'C',
+        value: 4
+      }, {
+        name: 'D',
+        value: 3
+      }, {
+        name: 'E',
+        value: 2
+      }, {
+        name: 'F',
+        value: 2
+      }, {
+        name: 'G',
+        value: 1
+      }]
+    }]
+  });
+
+
+
 
   // add point to chart serie
   add() {

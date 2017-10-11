@@ -40,7 +40,11 @@ export class TreemapDirective implements AfterViewInit, OnDestroy, OnChanges {
       this.treemap.treemapContainer = Highcharts.chart(this.el.nativeElement, this.treemap.options);
     }
   }
-
+/**
+ * 
+ * 
+ * 
+ */
   private destroy() {
     if (this.treemap && this.treemap.treemapContainer) {
       this.treemap.treemapContainer.destroy();
