@@ -13,21 +13,16 @@ export class ChartComponent implements OnInit {
 
   }
   treemap = new Treemap({
-    // chart: {
-    //   type: 'treemap'
-    // },
+    chart: {
+      type: 'treemap'
+    },
     title: {
       text: 'Treemap'
     },
     credits: {
       enabled: false
     },
-    plotOptions:{
-      treemap:{
-        layoutAlgorithm: 'squarified',
-
-      }
-    },
+    
     series: [{
       
       data: [{
@@ -54,46 +49,6 @@ export class ChartComponent implements OnInit {
       }]
     }]
   });
-
-  ankur = new Treemap({
-    chart: {
-      type: 'treemap'
-    },
-    title: {
-      text: 'Treemap'
-    },
-    credits: {
-      enabled: false
-    },
-    series: [{
-      data: [{
-        name: 'A',
-        value: 6
-      }, {
-        name: 'B',
-        value: 6
-      }, {
-        name: 'C',
-        value: 4
-      }, {
-        name: 'D',
-        value: 3
-      }, {
-        name: 'E',
-        value: 2
-      }, {
-        name: 'F',
-        value: 2
-      }, {
-        name: 'G',
-        value: 1
-      }]
-    }]
-  });
-
-
-
-
   // add point to chart serie
   add() {
     this.treemap.addPoint(Math.floor(Math.random() * 10));

@@ -1,9 +1,13 @@
+import { DataPoint, SeriesOptions, ChartObject, Options } from 'highcharts';
+
+export type Point = number | [number, number] | [string, number] | DataPoint;
+export type ChartSerie = SeriesOptions;
 import * as _ from 'lodash';
 
 export class Treemap {
-  treemapContainer;
+  treemapContainer: ChartObject;
 
-  constructor(public options) {
+  constructor(public options: Options) {
     // init series array if not set
     
     if (!this.options.series) {
@@ -49,11 +53,11 @@ export class Treemap {
   }
 
   addPoint(
-    point, 
+    point: Point, 
     serieIndex = 0, 
     redraw = true, 
     shift = false): void {
-    (this.options.series[serieIndex].data).push(point);
+    (<Point[]>this.options.series[serieIndex].data).push(point);
   
     if (this.treemapContainer) {
       this.treemapContainer.series[serieIndex].addPoint(point, redraw, shift);
